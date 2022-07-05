@@ -1,23 +1,73 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
+import StatusLine from './components/StatusLine';
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect( () => {
+
+  } ,[]);
+
+  const addEmptyTask = (status) => {
+    
+  }
+
+  const addTask = (taskToAdd) => {
+    
+  }
+
+  const deleteTask = (taskId) => {
+
+  }
+
+  const moveTask = (id, newStatus) => {
+
+  }
+
+  const saveTasksToLocalStorage = (tasks) => {
+
+  }
+
+  const loadTasksFromLocalStorage = () => {
+
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Task Management</h1>
+      <main>
+        <section>
+          <StatusLine
+            task={tasks}
+            addEmptyTask={addEmptyTask}
+            addTask={addTask}
+            deleteTask={deleteTask}
+            moveTask={moveTask}
+            status="Backlog"
+          >
+          </StatusLine>
+          <StatusLine
+            task={tasks}
+            addEmptyTask={addEmptyTask}
+            addTask={addTask}
+            deleteTask={deleteTask}
+            moveTask={moveTask}
+            status="In Progress"
+          >
+          </StatusLine>
+          <StatusLine
+            task={tasks}
+            addEmptyTask={addEmptyTask}
+            addTask={addTask}
+            deleteTask={deleteTask}
+            moveTask={moveTask}
+            status="Done"
+          >
+          </StatusLine>
+        </section>
+      </main>
     </div>
   );
 }
